@@ -1,138 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="utf-8">
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
 
-    
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-    <!-- 渲染优化 -->
-    <meta name="renderer" content="webkit">
-    <meta name="force-rendering" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="HandheldFriendly" content="True" >
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!--icon-->
-
-    
-    
-    
-    
-    
-
-
-    <!-- meta -->
-
-
-<title>String | 盡人事 聽天命</title>
+<link rel="stylesheet" href="/css/main.css">
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yangjinbiao5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <!-- OpenGraph -->
- 
     <meta name="description" content="|java8种基本类型boolean (1位 true false)  byte (1字节存储基本单位）  char (16位）  short （16位）  int （32）  float （32）  double （64）  long （64）| String的结构String的本质就是一个char数组 String为什么用final修饰 final修饰类，不可继承  final类中的所有成员方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String">
 <meta property="og:url" content="https://yangjinbiao5.github.io/2023/08/11/String/index.html">
 <meta property="og:site_name" content="盡人事 聽天命">
 <meta property="og:description" content="|java8种基本类型boolean (1位 true false)  byte (1字节存储基本单位）  char (16位）  short （16位）  int （32）  float （32）  double （64）  long （64）| String的结构String的本质就是一个char数组 String为什么用final修饰 final修饰类，不可继承  final类中的所有成员方">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-10T16:50:09.188Z">
 <meta property="article:modified_time" content="2023-08-10T16:52:54.094Z">
 <meta property="article:author" content="Yangjinbiao">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 
 
-    
-<link rel="stylesheet" href="/css/style/main.css">
- 
+<link rel="canonical" href="https://yangjinbiao5.github.io/2023/08/11/String/">
 
-    
-    
-        <link rel="stylesheet" id="hl-default-theme" href="/css/highlight/default.css" media="none" onload="this.media='all'">
-        
-    
 
-    
-    
 
-    
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yangjinbiao5.github.io/2023/08/11/String/","path":"2023/08/11/String/","title":"String"}</script>
 
-     
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>String | 盡人事 聽天命</title>
+  
 
-    <!-- custom head -->
 
-<meta name="generator" content="Hexo 6.3.0"></head>
 
-    <body>
-        <div id="app" tabindex="-1">
-            <header class="header">
-    <div class="header__left">
-        <a href="/" class="button">
-            <span class="logo__text">楊贰</span>
-        </a>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
-    <div class="header__right">
-        
-            <div class="navbar__menus">
-                
-                    <a href="/" class="navbar-menu button">首页</a>
-                
-                    <a href="/archives/" class="navbar-menu button">归档</a>
-                
-            </div>
-        
-        
-        
+  </div>
 
-        
-        
+  <div class="site-meta">
 
-        
-            <a class="dropdown-icon button" id="btn-dropdown" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width='24' height='24' fill="none" stroke="currentColor" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"><path fill="currentColor" d="M3.314,4.8h13.372c0.41,0,0.743-0.333,0.743-0.743c0-0.41-0.333-0.743-0.743-0.743H3.314c-0.41,0-0.743,0.333-0.743,0.743C2.571,4.467,2.904,4.8,3.314,4.8z M16.686,15.2H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,15.2,16.686,15.2z M16.686,9.257H3.314c-0.41,0-0.743,0.333-0.743,0.743s0.333,0.743,0.743,0.743h13.372c0.41,0,0.743-0.333,0.743-0.743S17.096,9.257,16.686,9.257z"></path></svg></a>
-            <div class="dropdown-menus" id="dropdown-menus">
-                
-                    <a href="/" class="dropdown-menu button">首页</a>
-                
-                    <a href="/archives/" class="dropdown-menu button">归档</a>
-                
-            </div>
-        
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">盡人事 聽天命</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
     </div>
-</header>
-
-
-            <main class="main">
-    
-
-<div class="post-title">
-    <h1 class="post-title__text">
-        String
-    </h1>
-    <div class="post-title__meta">
-        <a href="/archives/2023/08/" class="post-meta__date button">2023-08-11</a>
-        
- 
-        
-    
-    
-
-
- 
-
- 
-    </div>
+  </div>
 </div>
 
 
 
-<article class="post content-card">
-    <div class="post__header"></div>
-    <div class="post__content">
-        <p>|java8种基本类型<br>boolean (1位 true false)  <br>byte (1字节存储基本单位）  <br>char (16位）  <br>short （16位）  <br>int （32）  <br>float （32）  <br>double （64）  <br>long （64）|</p>
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#String%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">String的结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8final%E4%BF%AE%E9%A5%B0"><span class="nav-number">2.</span> <span class="nav-text">String为什么用final修饰</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">String是不可变类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E8%AE%BE%E8%AE%A1%E6%88%90%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">String为什么被设计成不可变类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String%E5%B8%B8%E9%87%8F%E6%B1%A0"><span class="nav-number">5.</span> <span class="nav-text">String常量池</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String%E4%B8%AD%E7%9A%84intern%E6%96%B9%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">String中的intern方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#String-%EF%BC%8CStringBuilder%EF%BC%8CStringBuffer-%E5%8C%BA%E5%88%AB%E2%80%9D-String-%EF%BC%8CStringBuilder%EF%BC%8CStringBuffer-%E5%8C%BA%E5%88%AB"><span class="nav-number">7.</span> <span class="nav-text">String ，StringBuilder，StringBuffer 区别”)String ，StringBuilder，StringBuffer 区别</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yangjinbiao"
+      src="/images/img.jpg">
+  <p class="site-author-name" itemprop="name">Yangjinbiao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yangjinbiao5" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yangjinbiao5" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/291857567@qq.com" title="E-Mail → 291857567@qq.com" rel="noopener me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yangjinbiao5.github.io/2023/08/11/String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/img.jpg">
+      <meta itemprop="name" content="Yangjinbiao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="盡人事 聽天命">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="String | 盡人事 聽天命">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          String
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-08-11 00:50:09 / 修改时间：00:52:54" itemprop="dateCreated datePublished" datetime="2023-08-11T00:50:09+08:00">2023-08-11</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>|java8种基本类型<br>boolean (1位 true false)  <br>byte (1字节存储基本单位）  <br>char (16位）  <br>short （16位）  <br>int （32）  <br>float （32）  <br>double （64）  <br>long （64）|</p>
 <h4 id="String的结构"><a href="#String的结构" class="headerlink" title="String的结构"></a><a href="https://yangjinbiao5.github.io/2020/08/16/String/#String%E7%9A%84%E7%BB%93%E6%9E%84" title="String的结构"></a>String的结构</h4><p>String的本质就是一个char数组</p>
 <h4 id="String为什么用final修饰"><a href="#String为什么用final修饰" class="headerlink" title="String为什么用final修饰"></a><a href="https://yangjinbiao5.github.io/2020/08/16/String/#String%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8final%E4%BF%AE%E9%A5%B0" title="String为什么用final修饰"></a>String为什么用final修饰</h4><ul>
 <li>final修饰类，不可继承</li>
@@ -223,96 +299,80 @@ System.out.println(s0==s2); //true
 <p>StringBuilder和StringBuffer是可变类型，StringBuilder是线程不安全的，StringBuffer是线程安全的</p>
 
     </div>
-     
-    <div class="post-footer__meta"><p>updated at 2023-08-11</p></div> 
-    <div class="post-entry__tags"></div> 
-</article>
 
-
-    <div class="nav">
-        <div class="nav__prev">
-            
-        </div>
-        <div class="nav__next">
-            
-                <a href="/2023/08/08/Singleton/" class="nav__link">
-                    <div>
-                        <div class="nav__label">
-                            Next Post
-                        </div>
-                        <div class="nav__title">
-                            单例模式
-                        </div>
-                    </div>
-                    <div>
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M434.944 790.624l-45.248-45.248L623.04 512l-233.376-233.376 45.248-45.248L713.568 512z" fill="#808080"></path></svg>
-                    </div>
-                </a>
-            
-        </div>
-    </div>
-
-
-
-
-
-</main>
-
-            <footer class="footer">
+    
     
     
 
+    <footer class="post-footer">
 
-    
-     
- 
-
- 
-    
         
-        <p class="footer-copyright">
-            Copyright © 2023 <a href="/">盡人事 聽天命</a>
-        </p>
-    
-    
-    <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/ChrAlpha/hexo-theme-cards" target="_blank">Cards</a></p>
-</footer>
 
-        </div>
-         
-
- 
-
- 
-
- 
-
- 
-
-
-
- 
-
-
-
- 
-
-
-    
- 
-
- 
-
- 
-
- 
-
- 
-
- 
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/08/Singleton/" rel="prev" title="单例模式">
+                  <i class="fa fa-angle-left"></i> 单例模式
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
 
 
 
 
-    </body>
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Yangjinbiao</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
 </html>
