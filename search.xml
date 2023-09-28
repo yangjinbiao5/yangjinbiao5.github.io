@@ -85,14 +85,31 @@
     <title>设计模式</title>
     <url>/2023/08/28/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<h3 id="软件开发的一个不变真理-CHANGE"><a href="#软件开发的一个不变真理-CHANGE" class="headerlink" title="软件开发的一个不变真理:CHANGE"></a>软件开发的一个不变真理:CHANGE</h3><hr>
-<h4 id="设计原则1："><a href="#设计原则1：" class="headerlink" title="设计原则1："></a>设计原则1：</h4><p>找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混合在一起</p>
-<h4 id="设计原则2："><a href="#设计原则2：" class="headerlink" title="设计原则2："></a>设计原则2：</h4><p>针对接口编程而不是针对实现编程</p>
-<h4 id="设计原则3："><a href="#设计原则3：" class="headerlink" title="设计原则3："></a>设计原则3：</h4><p>多用组合，少用继承</p>
-<h4 id="设计原则4："><a href="#设计原则4：" class="headerlink" title="设计原则4："></a>设计原则4：</h4><p>为交互对象间的松耦合设计而努力（对象之间的交互尽量设计成松耦合）</p>
-<h4 id="设计原则5："><a href="#设计原则5：" class="headerlink" title="设计原则5："></a>设计原则5：</h4><p>开放-关闭原则。类应该对扩展开放，对修改关闭。</p>
+<h4 id="设计原则1："><a href="#设计原则1：" class="headerlink" title="设计原则1："></a>设计原则1：</h4><ul>
+<li>找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混合在一起</li>
+</ul>
+<h4 id="设计原则2："><a href="#设计原则2：" class="headerlink" title="设计原则2："></a>设计原则2：</h4><ul>
+<li>针对接口编程而不是针对实现编程</li>
+</ul>
+<h4 id="设计原则3："><a href="#设计原则3：" class="headerlink" title="设计原则3："></a>设计原则3：</h4><ul>
+<li>多用组合，少用继承</li>
+</ul>
+<h4 id="设计原则4："><a href="#设计原则4：" class="headerlink" title="设计原则4："></a>设计原则4：</h4><ul>
+<li>为交互对象间的松耦合设计而努力（对象之间的交互尽量设计成松耦合）</li>
+</ul>
+<h4 id="设计原则5："><a href="#设计原则5：" class="headerlink" title="设计原则5："></a>设计原则5：</h4><ul>
+<li>开放-关闭原则。类应该对扩展开放，对修改关闭。</li>
+</ul>
 <hr>
-<h5 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">定义算法族，分别封装起来，让它们可以互相替换。此模式让算法的变化独立于使用算法的客户。</span><br></pre></td></tr></table></figure>
-<h5 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">定义了对象之间一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。</span><br></pre></td></tr></table></figure>
-<h5 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h5><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">动态地将责任附加到对象上，若要扩展功能，装饰者提供了比继承更有弹性的替代方案。</span><br></pre></td></tr></table></figure>]]></content>
+<h5 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h5><ul>
+<li>定义算法族，分别封装起来，让它们可以互相替换。此模式让算法的变化独立于使用算法的客户。</li>
+</ul>
+<h5 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h5><ul>
+<li>定义了对象之间一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。</li>
+</ul>
+<h5 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h5><ul>
+<li>动态地将责任附加到对象上，若要扩展功能，装饰者提供了比继承更有弹性的替代方案。</li>
+</ul>
+]]></content>
   </entry>
 </search>
