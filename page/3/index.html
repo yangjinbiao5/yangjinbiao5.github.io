@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yangjinbiao5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yangjinbiao5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"red","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="盡人事 聽天命">
 <meta property="og:url" content="https://yangjinbiao5.github.io/page/3/index.html">
 <meta property="og:site_name" content="盡人事 聽天命">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Yangjinbiao">
+<meta property="article:author" content="cartman">
 <meta name="twitter:card" content="summary">
 
 
@@ -115,9 +115,9 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Yangjinbiao"
+    <img class="site-author-image" itemprop="image" alt="cartman"
       src="/images/img.jpg">
-  <p class="site-author-name" itemprop="name">Yangjinbiao</p>
+  <p class="site-author-name" itemprop="name">cartman</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap animated">
@@ -164,7 +164,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="Yangjinbiao">
+      <meta itemprop="name" content="cartman">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -191,6 +191,13 @@
 
       <time title="创建时间：2023-12-10 00:59:36" itemprop="dateCreated datePublished" datetime="2023-12-10T00:59:36+08:00">2023-12-10</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-21 11:22:27" itemprop="dateModified" datetime="2024-01-21T11:22:27+08:00">2024-01-21</time>
+    </span>
 
   
 </div>
@@ -210,27 +217,236 @@
 <li>是不是懒加载(懒加载的好处：有的对象构建开销比较大，假如这个对象在项目启动的时候就构建了，万一从来没用到就比较浪费资源）</li>
 <li>能不能通过反射进行破坏。</li>
 </ul>
-<h3 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 饿汉式1   </span><br><span class="line"> * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 </span><br><span class="line"> */  </span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private static final Singleton instance = new Singleton();  </span><br><span class="line">  </span><br><span class="line">    public static Singleton getInstance() &#123;  </span><br><span class="line">        return instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 饿汉式1   
+ * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 
+ *&#x2F;  
+public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private static final Singleton instance &#x3D; new Singleton();  
+  
+    public static Singleton getInstance() &#123;  
+        return instance;  
+    &#125;  
+  
+&#125;  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 饿汉式2  </span><br><span class="line"> * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 </span><br><span class="line"> */</span><br><span class="line"> public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    public static final Singleton instance = new Singleton();  </span><br><span class="line">  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 饿汉式2  
+ * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 
+ *&#x2F;
+ public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    public static final Singleton instance &#x3D; new Singleton();  
+  
+&#125;  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 饿汉式3 静态代码块  </span><br><span class="line"> * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 </span><br><span class="line"> */</span><br><span class="line"> public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private static  Singleton instance ;  </span><br><span class="line">  </span><br><span class="line">    static &#123;  </span><br><span class="line">        instance = new Singleton();  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    public static Singleton getInstance()&#123;  </span><br><span class="line">        return instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 饿汉式3 静态代码块  
+ * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 
+ *&#x2F;
+ public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private static  Singleton instance ;  
+  
+    static &#123;  
+        instance &#x3D; new Singleton();  
+    &#125;  
+  
+    public static Singleton getInstance()&#123;  
+        return instance;  
+    &#125;  
+&#125;  
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 枚举类  </span><br><span class="line"> * 线程安全（枚举类型默认是安全的）  </span><br><span class="line"> * 避免反序列化破坏单例，使用枚举类型构造的单例是不能通过反射的方式进行破坏  </span><br><span class="line"> */</span><br><span class="line"> </span><br><span class="line">public enum Singleton &#123;  </span><br><span class="line">    INSTANCE  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 枚举类  
+ * 线程安全（枚举类型默认是安全的）  
+ * 避免反序列化破坏单例，使用枚举类型构造的单例是不能通过反射的方式进行破坏  
+ *&#x2F;
+ 
+public enum Singleton &#123;  
+    INSTANCE  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 懒汉式1  </span><br><span class="line"> * 线程不安全  </span><br><span class="line"> */  </span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private static  Singleton instance;  </span><br><span class="line">  </span><br><span class="line">    public static Singleton getInstance()&#123;  </span><br><span class="line">        if (instance==null) &#123;  </span><br><span class="line">            instance = new Singleton();  </span><br><span class="line">        &#125;  </span><br><span class="line">        return instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 懒汉式1  
+ * 线程不安全  
+ *&#x2F;  
+public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private static  Singleton instance;  
+  
+    public static Singleton getInstance()&#123;  
+        if (instance&#x3D;&#x3D;null) &#123;  
+            instance &#x3D; new Singleton();  
+        &#125;  
+        return instance;  
+    &#125;  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 改进1  </span><br><span class="line"> * 懒汉式2 synchronized 同步  </span><br><span class="line"> * 线程安全 ，效率太低（只需在创建对象时做同步，可以直接使用对象的时候就没必要同步）  </span><br><span class="line"> * 耗内存  </span><br><span class="line"> */  </span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private static  Singleton instance;  </span><br><span class="line">  </span><br><span class="line">    public synchronized static Singleton getInstance()&#123;  </span><br><span class="line">        if (instance==null) &#123;  </span><br><span class="line">            instance = new Singleton();  </span><br><span class="line">        &#125;  </span><br><span class="line">        return instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 改进1  
+ * 懒汉式2 synchronized 同步  
+ * 线程安全 ，效率太低（只需在创建对象时做同步，可以直接使用对象的时候就没必要同步）  
+ * 耗内存  
+ *&#x2F;  
+public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private static  Singleton instance;  
+  
+    public synchronized static Singleton getInstance()&#123;  
+        if (instance&#x3D;&#x3D;null) &#123;  
+            instance &#x3D; new Singleton();  
+        &#125;  
+        return instance;  
+    &#125;  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 改进2  </span><br><span class="line"> * 懒汉式3 双重检查锁定  </span><br><span class="line"> * 线程安全 ，比较常用 ，但是synchronized 依然有一定的性能影响  </span><br><span class="line"> * java多线程：可见性  happens-before原则  </span><br><span class="line"> * 1.程序顺序规则  </span><br><span class="line"> * 2.锁定规则  </span><br><span class="line"> * 3.volatile变量规则  </span><br><span class="line"> * 4.线程启动规则  </span><br><span class="line"> * 5.线程结束规则  </span><br><span class="line"> * 6.中断规则  </span><br><span class="line"> * 7.终结器规则  </span><br><span class="line"> * 8.传递性规则  </span><br><span class="line"> * 缺点：new Singleton()操作在指令层面不是一个原子操作，会分为三步  </span><br><span class="line"> * 1.分配内存  </span><br><span class="line"> * 2.初始化对象  </span><br><span class="line"> * 3.对象指向内存地址  </span><br><span class="line"> * 在真正执行时，JVM为了效率可能会对指令进行重排，比如先执行第一步，再执行第三步，再执行第二步，此时就会出现线程不安全的情况  </span><br><span class="line"> */</span><br><span class="line"> </span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private static  Singleton instance ;  </span><br><span class="line">  </span><br><span class="line">    public  static Singleton getInstance()&#123;  </span><br><span class="line">        if (instance==null) &#123;  </span><br><span class="line">            synchronized (Singleton.class)&#123;  </span><br><span class="line">                if (instance==null) &#123;  </span><br><span class="line">                    instance = new Singleton();  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        return instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 改进2  
+ * 懒汉式3 双重检查锁定  
+ * 线程安全 ，比较常用 ，但是synchronized 依然有一定的性能影响  
+ * java多线程：可见性  happens-before原则  
+ * 1.程序顺序规则  
+ * 2.锁定规则  
+ * 3.volatile变量规则  
+ * 4.线程启动规则  
+ * 5.线程结束规则  
+ * 6.中断规则  
+ * 7.终结器规则  
+ * 8.传递性规则  
+ * 缺点：new Singleton()操作在指令层面不是一个原子操作，会分为三步  
+ * 1.分配内存  
+ * 2.初始化对象  
+ * 3.对象指向内存地址  
+ * 在真正执行时，JVM为了效率可能会对指令进行重排，比如先执行第一步，再执行第三步，再执行第二步，此时就会出现线程不安全的情况  
+ *&#x2F;
+ 
+public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private static  Singleton instance ;  
+  
+    public  static Singleton getInstance()&#123;  
+        if (instance&#x3D;&#x3D;null) &#123;  
+            synchronized (Singleton.class)&#123;  
+                if (instance&#x3D;&#x3D;null) &#123;  
+                    instance &#x3D; new Singleton();  
+                &#125;  
+            &#125;  
+        &#125;  
+        return instance;  
+    &#125;  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 改进3  </span><br><span class="line"> *懒汉式 ：双检锁+volatile  </span><br><span class="line"> * 线程安全  </span><br><span class="line"> */  </span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private volatile static Singleton instance;  </span><br><span class="line"></span><br><span class="line">    public  static Singleton getInstance()&#123;  </span><br><span class="line">        if (instance==null) &#123;  </span><br><span class="line">            synchronized (Singleton.class)&#123;  </span><br><span class="line">                if (instance==null) &#123;  </span><br><span class="line">                    instance = new Singleton();  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        return instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 改进3  
+ *懒汉式 ：双检锁+volatile  
+ * 线程安全  
+ *&#x2F;  
+public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private volatile static Singleton instance;  
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * 改进4  </span><br><span class="line"> * 静态内部类  </span><br><span class="line"> * 线程安全</span><br><span class="line"> * 效率高，避免了synchronized 带来的性能影响  </span><br><span class="line"> * 注：静态内部类在程序启动的时候不会加载，只有第一次被调用的时候才会加载 </span><br><span class="line"> */</span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private volatile static Singleton instance;  </span><br><span class="line">  </span><br><span class="line">    private static class InstanceHolder &#123;  </span><br><span class="line">        private static final Singleton SINGLETON = new Singleton();  </span><br><span class="line">    &#125;  </span><br><span class="line">    public  static Singleton getInstance()&#123;  </span><br><span class="line">        return InstanceHolder.SINGLETON;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    public  static Singleton getInstance()&#123;  
+        if (instance&#x3D;&#x3D;null) &#123;  
+            synchronized (Singleton.class)&#123;  
+                if (instance&#x3D;&#x3D;null) &#123;  
+                    instance &#x3D; new Singleton();  
+                &#125;  
+            &#125;  
+        &#125;  
+        return instance;  
+    &#125;  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * cas方式  </span><br><span class="line"> * 优点：不需要使用传统的锁机制来保证线程安全，CAS是一种基于忙等待的算法，依赖底层硬件的实现，相对于锁它没有线程切换和阻塞的额外消耗，可以支持较大的并行度。  </span><br><span class="line"> * 缺点：如果忙等待一直执行不成功，一直在死循环中，会对CPU造成较大的执行开销。而且这种写法如果有多个线程同时执行singleton= new Singleton(); 会比较耗费内存。  </span><br><span class="line"> */  </span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">    private Singleton()&#123;  </span><br><span class="line">  </span><br><span class="line">    &#125;  </span><br><span class="line">    private  static AtomicReference&lt;Singleton&gt; INSTANCE = new AtomicReference&lt;Singleton&gt;();  </span><br><span class="line">  </span><br><span class="line">    public static Singleton getInstance()&#123;  </span><br><span class="line">        while (true)&#123;  </span><br><span class="line">            Singleton  singleton = INSTANCE.get();  </span><br><span class="line">            if (singleton!=null) &#123;  </span><br><span class="line">                return singleton;  </span><br><span class="line">            &#125;  </span><br><span class="line">            if (INSTANCE.compareAndSet(null,new Singleton())) &#123;  </span><br><span class="line">                return INSTANCE.get();  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * 改进4  
+ * 静态内部类  
+ * 线程安全
+ * 效率高，避免了synchronized 带来的性能影响  
+ * 注：静态内部类在程序启动的时候不会加载，只有第一次被调用的时候才会加载 
+ *&#x2F;
+public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private volatile static Singleton instance;  
+  
+    private static class InstanceHolder &#123;  
+        private static final Singleton SINGLETON &#x3D; new Singleton();  
+    &#125;  
+    public  static Singleton getInstance()&#123;  
+        return InstanceHolder.SINGLETON;  
+    &#125;  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">/**  </span><br><span class="line"> * Lock机制  </span><br><span class="line"> * 类似双重校验锁写法  </span><br><span class="line"> */  </span><br><span class="line">public class Singleton &#123;  </span><br><span class="line">  </span><br><span class="line">    private Singleton() &#123;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    private static Singleton instance = null;  </span><br><span class="line">  </span><br><span class="line">    private static Lock lock = new ReentrantLock();  </span><br><span class="line">  </span><br><span class="line">    public static Singleton getInstance() &#123;  </span><br><span class="line">        if (instance == null) &#123;  </span><br><span class="line">            //显式调用，手动加锁  </span><br><span class="line">            lock.lock();  </span><br><span class="line">            if (instance == null) &#123;  </span><br><span class="line">                instance = new Singleton();  </span><br><span class="line">            &#125;  </span><br><span class="line">            //显式调用，手动解锁  </span><br><span class="line">            lock.unlock();  </span><br><span class="line">        &#125;  </span><br><span class="line">        return instance;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * cas方式  
+ * 优点：不需要使用传统的锁机制来保证线程安全，CAS是一种基于忙等待的算法，依赖底层硬件的实现，相对于锁它没有线程切换和阻塞的额外消耗，可以支持较大的并行度。  
+ * 缺点：如果忙等待一直执行不成功，一直在死循环中，会对CPU造成较大的执行开销。而且这种写法如果有多个线程同时执行singleton&#x3D; new Singleton(); 会比较耗费内存。  
+ *&#x2F;  
+public class Singleton &#123;  
+    private Singleton()&#123;  
+  
+    &#125;  
+    private  static AtomicReference&lt;Singleton&gt; INSTANCE &#x3D; new AtomicReference&lt;Singleton&gt;();  
+  
+    public static Singleton getInstance()&#123;  
+        while (true)&#123;  
+            Singleton  singleton &#x3D; INSTANCE.get();  
+            if (singleton!&#x3D;null) &#123;  
+                return singleton;  
+            &#125;  
+            if (INSTANCE.compareAndSet(null,new Singleton())) &#123;  
+                return INSTANCE.get();  
+            &#125;  
+        &#125;  
+    &#125;  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+ * Lock机制  
+ * 类似双重校验锁写法  
+ *&#x2F;  
+public class Singleton &#123;  
+  
+    private Singleton() &#123;  
+    &#125;  
+  
+    private static Singleton instance &#x3D; null;  
+  
+    private static Lock lock &#x3D; new ReentrantLock();  
+  
+    public static Singleton getInstance() &#123;  
+        if (instance &#x3D;&#x3D; null) &#123;  
+            &#x2F;&#x2F;显式调用，手动加锁  
+            lock.lock();  
+            if (instance &#x3D;&#x3D; null) &#123;  
+                instance &#x3D; new Singleton();  
+            &#125;  
+            &#x2F;&#x2F;显式调用，手动解锁  
+            lock.unlock();  
+        &#125;  
+        return instance;  
+    &#125;  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
     </div>
@@ -265,7 +481,7 @@
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
-    <span class="author" itemprop="copyrightHolder">Yangjinbiao</span>
+    <span class="author" itemprop="copyrightHolder">cartman</span>
   </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -274,7 +490,6 @@
   </footer>
 
   
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -283,7 +498,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 

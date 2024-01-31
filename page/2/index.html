@@ -18,14 +18,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"yangjinbiao5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yangjinbiao5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"red","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="盡人事 聽天命">
 <meta property="og:url" content="https://yangjinbiao5.github.io/page/2/index.html">
 <meta property="og:site_name" content="盡人事 聽天命">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Yangjinbiao">
+<meta property="article:author" content="cartman">
 <meta name="twitter:card" content="summary">
 
 
@@ -115,9 +115,9 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Yangjinbiao"
+    <img class="site-author-image" itemprop="image" alt="cartman"
       src="/images/img.jpg">
-  <p class="site-author-name" itemprop="name">Yangjinbiao</p>
+  <p class="site-author-name" itemprop="name">cartman</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap animated">
@@ -160,11 +160,11 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://yangjinbiao5.github.io/JVM/">
+    <link itemprop="mainEntityOfPage" href="https://yangjinbiao5.github.io/String/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
-      <meta itemprop="name" content="Yangjinbiao">
+      <meta itemprop="name" content="cartman">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -178,7 +178,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/JVM/" class="post-title-link" itemprop="url">深入理解JVM</a>
+          <a href="/String/" class="post-title-link" itemprop="url">String</a>
         </h2>
 
         <div class="post-meta-container">
@@ -188,9 +188,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-12-10 01:00:11 / 修改时间：01:26:00" itemprop="dateCreated datePublished" datetime="2023-12-10T01:00:11+08:00">2023-12-10</time>
+      <time title="创建时间：2023-12-07 22:29:20" itemprop="dateCreated datePublished" datetime="2023-12-07T22:29:20+08:00">2023-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-21 11:22:20" itemprop="dateModified" datetime="2024-01-21T11:22:20+08:00">2024-01-21</time>
     </span>
 
   
@@ -203,15 +209,101 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><ol>
-<li>程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有OOM的区域。</li>
-<li>虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有StackOverflowError 和OOM.</li>
-<li>本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。</li>
-<li>java堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过-xmx 和-xms控制堆的大小（一般设置成一样，内存扩大或缩小导致应用停顿，降低延迟）</li>
-<li>方法区。用于存储类信息、常量、静态变量、即时编译器编译后的代码等数据。这个区域的内存回收目标主要是针对常量池的回收和对类型的卸载。有OOM。</li>
-<li>运行时常量池。是方法区的一部分，用于存放编译期产生的各种字面量和符号引用。运行期间也可能有新的常量放入池中。</li>
-<li></li>
-</ol>
+          <p>java8种基本类型</p>
+<ul>
+<li>boolean (1位 true false)</li>
+<li>byte (1字节存储基本单位）</li>
+<li>char (16位） </li>
+<li>short （16位） </li>
+<li>int （32）</li>
+<li>float （32） </li>
+<li>double （64） </li>
+<li>long （64</li>
+</ul>
+<h4 id="String的结构"><a href="#String的结构" class="headerlink" title="String的结构"></a>String的结构</h4><p>String的本质就是一个char数组</p>
+<h4 id="String为什么用final修饰"><a href="#String为什么用final修饰" class="headerlink" title="String为什么用final修饰"></a>String为什么用final修饰</h4><ul>
+<li><p>final修饰类，不可继承<br>final类中的所有成员方法都会被隐式地指定为final方法</p>
+</li>
+<li><p>final修饰属性，属性是不可修改的<br>对于一个final变量，如果是基本数据类型的变量，则其数值一旦在初始化之后便不能更改；如果是引用类型的变量，则在对其初始化之后便不能再让其指向另一个对象。</p>
+</li>
+<li><p>final修饰方法，不可重写</p>
+<pre class="line-numbers language-none"><code class="language-none">下面这段话摘自《Java编程思想》第四版第143页：
+　　&quot;使用final方法的原因有两个。
+　　第一个原因是把方法锁定，以防任何继承类修改它的含义；
+　　第二个原因是效率。在早期的Java实现版本中，会将final方法转为内嵌调用。但是如果方法过于庞大，可能看不到内嵌调用带来的任何性能提升。
+　　在最近的Java版本中，不需要使用final方法进行这些优化了。&quot;
+注：类的private方法会隐式地被指定为final方法。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h4 id="String是不可变类型"><a href="#String是不可变类型" class="headerlink" title="String是不可变类型"></a>String是不可变类型</h4><ul>
+<li>用final修饰</li>
+<li>value数组权限控制，以及每次操作生成新对象<br>每次对String都不是在原有的value数组上进行改动，而是生成一个新的数组</li>
+</ul>
+<p>String为什么被设计成不可变类型</p>
+<p>1.无法被继承 私有方法不能被重写（为了语义统一）<br>2.每次操作生成新对象<br>3.线程安全</p>
+<p>使用HashMap HashSet 等结构时，一定要注意使用不可变类型作为key<br>假如要使用可变类型作为key，要重写hashCode方法和equals方法</p>
+<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
+    Set&lt;StringBuilder&gt; set &#x3D; new HashSet&lt;StringBuilder&gt;();  
+  
+    StringBuilder stringBuilder1 &#x3D; new StringBuilder(&quot;a&quot;);  
+  
+    StringBuilder stringBuilder2 &#x3D; new StringBuilder(&quot;ab&quot;);  
+  
+    set.add(stringBuilder1);  
+  
+    set.add(stringBuilder2);  
+  
+    stringBuilder1.append(&quot;b&quot;);  
+  
+    System.out.println(set);  
+    &#x2F;&#x2F; 打印结果： [ab, ab] 
+
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="String常量池"><a href="#String常量池" class="headerlink" title="String常量池"></a>String常量池</h4><p>String常量池位于方法区，一部分是编译期，一部分是运行时。</p>
+<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
+    String test&#x3D;&quot;123&quot;;  
+  
+    String str &#x3D; &quot;1&quot;;  
+  
+    String str1 &#x3D; &quot;2&quot;;  
+  
+    String str2 &#x3D; &quot;3&quot;;  
+  
+    System.out.println(test&#x3D;&#x3D;&quot;1&quot;+&quot;2&quot;+&quot;3&quot;);&#x2F;&#x2F;true  
+  
+    System.out.println(test&#x3D;&#x3D;str+str1+str2);&#x2F;&#x2F;false  
+  
+    String s0 &#x3D; &quot;12&quot;;  
+  
+    final String s1 &#x3D; &quot;2&quot;;  
+  
+    String s2 &#x3D; &quot;1&quot;+s1;  
+  
+    System.out.println(s0&#x3D;&#x3D;s2); &#x2F;&#x2F;true  
+  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="String中的intern方法"><a href="#String中的intern方法" class="headerlink" title="String中的intern方法"></a>String中的intern方法</h4><p>public native String intern();</p>
+<blockquote>
+<p>intern 方法用于扩充常量池<br>“abc”.intern()</p>
+</blockquote>
+<p>首先检查常量池中是否有“abc”，如果存在直接返回实例引用</p>
+<p>如果不存在，会在常量池中新增“abc”，然后返回实例引用</p>
+<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
+    String s1&#x3D;&quot;abc&quot;;  
+  
+    String s2 &#x3D; new String(&quot;abc&quot;);  
+  
+    System.out.println(s1&#x3D;&#x3D;s2);&#x2F;&#x2F;false  
+  
+    System.out.println(s1&#x3D;&#x3D;s2.intern());&#x2F;&#x2F;true  
+  
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="String-，StringBuilder，StringBuffer-区别”-String-，StringBuilder，StringBuffer-区别"><a href="#String-，StringBuilder，StringBuffer-区别”-String-，StringBuilder，StringBuffer-区别" class="headerlink" title="String ，StringBuilder，StringBuffer 区别”)String ，StringBuilder，StringBuffer 区别"></a>String ，StringBuilder，StringBuffer 区别”)String ，StringBuilder，StringBuffer 区别</h4><p>String是不可变类型<br>StringBuilder和StringBuffer是可变类型<br>StringBuilder是线程不安全的<br>StringBuffer是线程安全的</p>
 
       
     </div>
@@ -246,7 +338,7 @@
     <span class="with-love">
       <i class="fa fa-heart"></i>
     </span>
-    <span class="author" itemprop="copyrightHolder">Yangjinbiao</span>
+    <span class="author" itemprop="copyrightHolder">cartman</span>
   </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
@@ -255,7 +347,6 @@
   </footer>
 
   
-  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -264,7 +355,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
