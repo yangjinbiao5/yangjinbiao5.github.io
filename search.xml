@@ -603,7 +603,10 @@ public class Singleton &#123;
 <li>提供了一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。</li>
 </ul>
 <h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><ul>
-<li>详情请看 <em><strong><a href="/Singleton">单例模式</a></strong></em></li>
+<li><p>详情请看 <em><strong><a href="/Singleton">单例模式</a></strong></em></p>
+</li>
+<li><p>详情请看 [[_posts&#x2F;Singleton|Singleton]]</p>
+</li>
 </ul>
 ]]></content>
   </entry>
