@@ -35,48 +35,48 @@
 <p>String为什么被设计成不可变类型</p>
 <p>1.无法被继承 私有方法不能被重写（为了语义统一）<br>2.每次操作生成新对象<br>3.线程安全</p>
 <p>使用HashMap HashSet 等结构时，一定要注意使用不可变类型作为key<br>假如要使用可变类型作为key，要重写hashCode方法和equals方法</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
-    Set&lt;StringBuilder&gt; set &#x3D; new HashSet&lt;StringBuilder&gt;();  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">StringBuilder</span><span class="token punctuation">></span></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">StringBuilder</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    StringBuilder stringBuilder1 &#x3D; new StringBuilder(&quot;a&quot;);  
+    <span class="token class-name">StringBuilder</span> stringBuilder1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    StringBuilder stringBuilder2 &#x3D; new StringBuilder(&quot;ab&quot;);  
+    <span class="token class-name">StringBuilder</span> stringBuilder2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token string">"ab"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    set.add(stringBuilder1);  
+    set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>stringBuilder1<span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    set.add(stringBuilder2);  
+    set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>stringBuilder2<span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    stringBuilder1.append(&quot;b&quot;);  
+    stringBuilder1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    System.out.println(set);  
-    &#x2F;&#x2F; 打印结果： [ab, ab] 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token comment">// 打印结果： [ab, ab] </span>
 
-&#125;
+<span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="String常量池"><a href="#String常量池" class="headerlink" title="String常量池"></a>String常量池</h4><p>String常量池位于方法区，一部分是编译期，一部分是运行时。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
-    String test&#x3D;&quot;123&quot;;  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token class-name">String</span> test<span class="token operator">=</span><span class="token string">"123"</span><span class="token punctuation">;</span>  
   
-    String str &#x3D; &quot;1&quot;;  
+    <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>  
   
-    String str1 &#x3D; &quot;2&quot;;  
+    <span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>  
   
-    String str2 &#x3D; &quot;3&quot;;  
+    <span class="token class-name">String</span> str2 <span class="token operator">=</span> <span class="token string">"3"</span><span class="token punctuation">;</span>  
   
-    System.out.println(test&#x3D;&#x3D;&quot;1&quot;+&quot;2&quot;+&quot;3&quot;);&#x2F;&#x2F;true  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>test<span class="token operator">==</span><span class="token string">"1"</span><span class="token operator">+</span><span class="token string">"2"</span><span class="token operator">+</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true  </span>
   
-    System.out.println(test&#x3D;&#x3D;str+str1+str2);&#x2F;&#x2F;false  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>test<span class="token operator">==</span>str<span class="token operator">+</span>str1<span class="token operator">+</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false  </span>
   
-    String s0 &#x3D; &quot;12&quot;;  
+    <span class="token class-name">String</span> s0 <span class="token operator">=</span> <span class="token string">"12"</span><span class="token punctuation">;</span>  
   
-    final String s1 &#x3D; &quot;2&quot;;  
+    <span class="token keyword">final</span> <span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>  
   
-    String s2 &#x3D; &quot;1&quot;+s1;  
+    <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"1"</span><span class="token operator">+</span>s1<span class="token punctuation">;</span>  
   
-    System.out.println(s0&#x3D;&#x3D;s2); &#x2F;&#x2F;true  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s0<span class="token operator">==</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true  </span>
   
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="String中的intern方法"><a href="#String中的intern方法" class="headerlink" title="String中的intern方法"></a>String中的intern方法</h4><p>public native String intern();</p>
 <blockquote>
@@ -84,16 +84,16 @@
 </blockquote>
 <p>首先检查常量池中是否有“abc”，如果存在直接返回实例引用</p>
 <p>如果不存在，会在常量池中新增“abc”，然后返回实例引用</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
-    String s1&#x3D;&quot;abc&quot;;  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token class-name">String</span> s1<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">;</span>  
   
-    String s2 &#x3D; new String(&quot;abc&quot;);  
+    <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    System.out.println(s1&#x3D;&#x3D;s2);&#x2F;&#x2F;false  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token operator">==</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false  </span>
   
-    System.out.println(s1&#x3D;&#x3D;s2.intern());&#x2F;&#x2F;true  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token operator">==</span>s2<span class="token punctuation">.</span><span class="token function">intern</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true  </span>
   
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -111,105 +111,105 @@
 <li>是不是懒加载(懒加载的好处：有的对象构建开销比较大，假如这个对象在项目启动的时候就构建了，万一从来没用到就比较浪费资源）</li>
 <li>能不能通过反射进行破坏。</li>
 </ul>
-<h3 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<h3 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 饿汉式1   
  * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 
- *&#x2F;  
-public class Singleton &#123;  
-    private Singleton()&#123;  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private static final Singleton instance &#x3D; new Singleton();  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Singleton</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    public static Singleton getInstance() &#123;  
-        return instance;  
-    &#125;  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
   
-&#125;  
+<span class="token punctuation">&#125;</span>  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 饿汉式2  
  * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 
- *&#x2F;
- public class Singleton &#123;  
-    private Singleton()&#123;  
+ */</span>
+ <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    public static final Singleton instance &#x3D; new Singleton();  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Singleton</span> instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-&#125;  
+<span class="token punctuation">&#125;</span>  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 饿汉式3 静态代码块  
  * 缺点：不是懒加载，如果对象创建开销比较大，万一从来没有用到就比较浪费资源 
- *&#x2F;
- public class Singleton &#123;  
-    private Singleton()&#123;  
+ */</span>
+ <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private static  Singleton instance ;  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token class-name">Singleton</span> instance <span class="token punctuation">;</span>  
   
-    static &#123;  
-        instance &#x3D; new Singleton();  
-    &#125;  
+    <span class="token keyword">static</span> <span class="token punctuation">&#123;</span>  
+        instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
   
-    public static Singleton getInstance()&#123;  
-        return instance;  
-    &#125;  
-&#125;  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span>  
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 枚举类  
  * 线程安全（枚举类型默认是安全的）  
  * 避免反序列化破坏单例，使用枚举类型构造的单例是不能通过反射的方式进行破坏  
- *&#x2F;
+ */</span>
  
-public enum Singleton &#123;  
-    INSTANCE  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">public</span> <span class="token keyword">enum</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token constant">INSTANCE</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h3><pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<h3 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 懒汉式1  
  * 线程不安全  
- *&#x2F;  
-public class Singleton &#123;  
-    private Singleton()&#123;  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private static  Singleton instance;  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span>  
   
-    public static Singleton getInstance()&#123;  
-        if (instance&#x3D;&#x3D;null) &#123;  
-            instance &#x3D; new Singleton();  
-        &#125;  
-        return instance;  
-    &#125;  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">&#125;</span>  
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 改进1  
  * 懒汉式2 synchronized 同步  
  * 线程安全 ，效率太低（只需在创建对象时做同步，可以直接使用对象的时候就没必要同步）  
  * 耗内存  
- *&#x2F;  
-public class Singleton &#123;  
-    private Singleton()&#123;  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private static  Singleton instance;  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span>  
   
-    public synchronized static Singleton getInstance()&#123;  
-        if (instance&#x3D;&#x3D;null) &#123;  
-            instance &#x3D; new Singleton();  
-        &#125;  
-        return instance;  
-    &#125;  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">&#125;</span>  
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 改进2  
  * 懒汉式3 双重检查锁定  
  * 线程安全 ，比较常用 ，但是synchronized 依然有一定的性能影响  
@@ -227,120 +227,120 @@ public class Singleton &#123;
  * 2.初始化对象  
  * 3.对象指向内存地址  
  * 在真正执行时，JVM为了效率可能会对指令进行重排，比如先执行第一步，再执行第三步，再执行第二步，此时就会出现线程不安全的情况  
- *&#x2F;
+ */</span>
  
-public class Singleton &#123;  
-    private Singleton()&#123;  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private static  Singleton instance ;  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span> <span class="token keyword">static</span>  <span class="token class-name">Singleton</span> instance <span class="token punctuation">;</span>  
   
-    public  static Singleton getInstance()&#123;  
-        if (instance&#x3D;&#x3D;null) &#123;  
-            synchronized (Singleton.class)&#123;  
-                if (instance&#x3D;&#x3D;null) &#123;  
-                    instance &#x3D; new Singleton();  
-                &#125;  
-            &#125;  
-        &#125;  
-        return instance;  
-    &#125;  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">public</span>  <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">Singleton</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+                    instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token punctuation">&#125;</span>  
+            <span class="token punctuation">&#125;</span>  
+        <span class="token punctuation">&#125;</span>  
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 改进3  
  *懒汉式 ：双检锁+volatile  
  * 线程安全  
- *&#x2F;  
-public class Singleton &#123;  
-    private Singleton()&#123;  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private volatile static Singleton instance;  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span>  
 
-    public  static Singleton getInstance()&#123;  
-        if (instance&#x3D;&#x3D;null) &#123;  
-            synchronized (Singleton.class)&#123;  
-                if (instance&#x3D;&#x3D;null) &#123;  
-                    instance &#x3D; new Singleton();  
-                &#125;  
-            &#125;  
-        &#125;  
-        return instance;  
-    &#125;  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">public</span>  <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+            <span class="token keyword">synchronized</span> <span class="token punctuation">(</span><span class="token class-name">Singleton</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>instance<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+                    instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token punctuation">&#125;</span>  
+            <span class="token punctuation">&#125;</span>  
+        <span class="token punctuation">&#125;</span>  
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * 改进4  
  * 静态内部类  
  * 线程安全
  * 效率高，避免了synchronized 带来的性能影响  
  * 注：静态内部类在程序启动的时候不会加载，只有第一次被调用的时候才会加载 
- *&#x2F;
-public class Singleton &#123;  
-    private Singleton()&#123;  
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private volatile static Singleton instance;  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span> <span class="token keyword">volatile</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> instance<span class="token punctuation">;</span>  
   
-    private static class InstanceHolder &#123;  
-        private static final Singleton SINGLETON &#x3D; new Singleton();  
-    &#125;  
-    public  static Singleton getInstance()&#123;  
-        return InstanceHolder.SINGLETON;  
-    &#125;  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">InstanceHolder</span> <span class="token punctuation">&#123;</span>  
+        <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> <span class="token class-name">Singleton</span> <span class="token constant">SINGLETON</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">public</span>  <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+        <span class="token keyword">return</span> <span class="token class-name">InstanceHolder</span><span class="token punctuation">.</span><span class="token constant">SINGLETON</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * cas方式  
  * 优点：不需要使用传统的锁机制来保证线程安全，CAS是一种基于忙等待的算法，依赖底层硬件的实现，相对于锁它没有线程切换和阻塞的额外消耗，可以支持较大的并行度。  
- * 缺点：如果忙等待一直执行不成功，一直在死循环中，会对CPU造成较大的执行开销。而且这种写法如果有多个线程同时执行singleton&#x3D; new Singleton(); 会比较耗费内存。  
- *&#x2F;  
-public class Singleton &#123;  
-    private Singleton()&#123;  
+ * 缺点：如果忙等待一直执行不成功，一直在死循环中，会对CPU造成较大的执行开销。而且这种写法如果有多个线程同时执行singleton= new Singleton(); 会比较耗费内存。  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
   
-    &#125;  
-    private  static AtomicReference&lt;Singleton&gt; INSTANCE &#x3D; new AtomicReference&lt;Singleton&gt;();  
+    <span class="token punctuation">&#125;</span>  
+    <span class="token keyword">private</span>  <span class="token keyword">static</span> <span class="token class-name">AtomicReference</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Singleton</span><span class="token punctuation">></span></span> <span class="token constant">INSTANCE</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AtomicReference</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Singleton</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    public static Singleton getInstance()&#123;  
-        while (true)&#123;  
-            Singleton  singleton &#x3D; INSTANCE.get();  
-            if (singleton!&#x3D;null) &#123;  
-                return singleton;  
-            &#125;  
-            if (INSTANCE.compareAndSet(null,new Singleton())) &#123;  
-                return INSTANCE.get();  
-            &#125;  
-        &#125;  
-    &#125;  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
+            <span class="token class-name">Singleton</span>  singleton <span class="token operator">=</span> <span class="token constant">INSTANCE</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton<span class="token operator">!=</span><span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+                <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>  
+            <span class="token punctuation">&#125;</span>  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">INSTANCE</span><span class="token punctuation">.</span><span class="token function">compareAndSet</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+                <span class="token keyword">return</span> <span class="token constant">INSTANCE</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">&#125;</span>  
+        <span class="token punctuation">&#125;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;**  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**  
  * Lock机制  
  * 类似双重校验锁写法  
- *&#x2F;  
-public class Singleton &#123;  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">&#123;</span>  
   
-    private Singleton() &#123;  
-    &#125;  
+    <span class="token keyword">private</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token punctuation">&#125;</span>  
   
-    private static Singleton instance &#x3D; null;  
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> instance <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>  
   
-    private static Lock lock &#x3D; new ReentrantLock();  
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token class-name">Lock</span> lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    public static Singleton getInstance() &#123;  
-        if (instance &#x3D;&#x3D; null) &#123;  
-            &#x2F;&#x2F;显式调用，手动加锁  
-            lock.lock();  
-            if (instance &#x3D;&#x3D; null) &#123;  
-                instance &#x3D; new Singleton();  
-            &#125;  
-            &#x2F;&#x2F;显式调用，手动解锁  
-            lock.unlock();  
-        &#125;  
-        return instance;  
-    &#125;  
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">Singleton</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+            <span class="token comment">//显式调用，手动加锁  </span>
+            lock<span class="token punctuation">.</span><span class="token function">lock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+                instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">&#125;</span>  
+            <span class="token comment">//显式调用，手动解锁  </span>
+            lock<span class="token punctuation">.</span><span class="token function">unlock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">&#125;</span>  
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>  
+    <span class="token punctuation">&#125;</span>  
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
   </entry>
   <entry>
@@ -700,13 +700,123 @@ public class Singleton &#123;
     <title>Nginx</title>
     <url>/Nginx/</url>
     <content><![CDATA[<h4 id="常见用途"><a href="#常见用途" class="headerlink" title="常见用途"></a>常见用途</h4><ol>
-<li>web服务器</li>
-<li>反向代理</li>
-<li>负载均衡</li>
-<li>URL重定向</li>
-<li>防盗链</li>
-<li>简易文件服务器</li>
-<li></li>
+<li>web服务器  <pre class="line-numbers language-json" data-language="json"><code class="language-json">
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;   # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+           root   /usr/share/nginx/html;  
+           index  index.html index.htm;  
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">443</span> ssl;  # 监听端口
+       server_name  localhost; # 绑定域名
+       ssl_certificate      cert.pem;
+       ssl_certificate_key  cert.key;
+       location / <span class="token punctuation">&#123;</span>  
+           root   /usr/share/nginx/html;  
+           index  index.html index.htm;  
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>反向代理<pre class="line-numbers language-json" data-language="json"><code class="language-json">
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//localhost:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>负载均衡<pre class="line-numbers language-json" data-language="json"><code class="language-json">upstream webservers<span class="token punctuation">&#123;</span>
+	
+	server <span class="token number">192.168</span>.<span class="token number">1.100</span><span class="token operator">:</span><span class="token number">8080</span>;
+	server <span class="token number">192.168</span>.<span class="token number">1.101</span><span class="token operator">:</span><span class="token number">8080</span>;
+	server <span class="token number">192.168</span>.<span class="token number">1.102</span><span class="token operator">:</span><span class="token number">8080</span>;
+	# 可选的负载均衡策略 默认轮询
+	# ip_hash; # IP哈希
+	# least_conn; # 最少连接
+<span class="token punctuation">&#125;</span>
+ server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//webservers;</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>URL重定向<pre class="line-numbers language-json" data-language="json"><code class="language-json"> # 将老域名重定向到新域名 保持url不变
+ server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  old.com; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       rewrite ^/(.*)$ https<span class="token operator">:</span><span class="token comment">//new.com/$1;</span>
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span>
+# URL变更
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       rewrite ^/old-path/(.*)$ /new-path/$<span class="token number">1</span>;
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>防盗链<pre class="line-numbers language-json" data-language="json"><code class="language-json">server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location ~* \.(gif|jpg|png)$ <span class="token punctuation">&#123;</span>  
+	       valid_referers none blocked *.something.com;
+	       if($invalid_referer) <span class="token punctuation">&#123;</span>
+		       return <span class="token number">403</span>;
+	       <span class="token punctuation">&#125;</span>
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>简易文件服务器<pre class="line-numbers language-json" data-language="json"><code class="language-json">server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       # 完整路径 /home/cartman/Downloads/test
+       location /test <span class="token punctuation">&#123;</span>  
+	       root /home/cartman/Downloads;  
+	       # 显示目录;    
+		   autoindex on;  
+		   # 显示文件大小; 关闭计算文件确切大小（单位bytes），只显示大概大小（单位kb、mb、gb)    
+		   autoindex_exact_size off;    
+		   # 显示文件时间    
+		   autoindex_localtime on;
+		   # 避免中文乱码;    
+		   charset utf<span class="token number">-8</span>;
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>基于不同请求路径转发不同服务<pre class="line-numbers language-json" data-language="json"><code class="language-json">server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location /path1/ <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//ip1:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       location /path2/ <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//ip2:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       location /path3/ <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//ip3:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 ]]></content>
   </entry>

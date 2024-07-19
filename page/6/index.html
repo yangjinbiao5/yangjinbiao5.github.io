@@ -190,7 +190,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2024-07-20 00:52:21 / 修改时间：01:02:21" itemprop="dateCreated datePublished" datetime="2024-07-20T00:52:21+08:00">2024-07-20</time>
+      <time title="创建时间：2024-07-20 00:52:21 / 修改时间：03:02:03" itemprop="dateCreated datePublished" datetime="2024-07-20T00:52:21+08:00">2024-07-20</time>
     </span>
 
   
@@ -204,13 +204,123 @@
     
     <div class="post-body" itemprop="articleBody">
           <h4 id="常见用途"><a href="#常见用途" class="headerlink" title="常见用途"></a>常见用途</h4><ol>
-<li>web服务器</li>
-<li>反向代理</li>
-<li>负载均衡</li>
-<li>URL重定向</li>
-<li>防盗链</li>
-<li>简易文件服务器</li>
-<li></li>
+<li>web服务器  <pre class="line-numbers language-json" data-language="json"><code class="language-json">
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;   # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+           root   /usr/share/nginx/html;  
+           index  index.html index.htm;  
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">443</span> ssl;  # 监听端口
+       server_name  localhost; # 绑定域名
+       ssl_certificate      cert.pem;
+       ssl_certificate_key  cert.key;
+       location / <span class="token punctuation">&#123;</span>  
+           root   /usr/share/nginx/html;  
+           index  index.html index.htm;  
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>反向代理<pre class="line-numbers language-json" data-language="json"><code class="language-json">
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//localhost:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>负载均衡<pre class="line-numbers language-json" data-language="json"><code class="language-json">upstream webservers<span class="token punctuation">&#123;</span>
+	
+	server <span class="token number">192.168</span>.<span class="token number">1.100</span><span class="token operator">:</span><span class="token number">8080</span>;
+	server <span class="token number">192.168</span>.<span class="token number">1.101</span><span class="token operator">:</span><span class="token number">8080</span>;
+	server <span class="token number">192.168</span>.<span class="token number">1.102</span><span class="token operator">:</span><span class="token number">8080</span>;
+	# 可选的负载均衡策略 默认轮询
+	# ip_hash; # IP哈希
+	# least_conn; # 最少连接
+<span class="token punctuation">&#125;</span>
+ server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//webservers;</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>URL重定向<pre class="line-numbers language-json" data-language="json"><code class="language-json"> # 将老域名重定向到新域名 保持url不变
+ server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  old.com; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       rewrite ^/(.*)$ https<span class="token operator">:</span><span class="token comment">//new.com/$1;</span>
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span>
+# URL变更
+server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location / <span class="token punctuation">&#123;</span>  
+	       rewrite ^/old-path/(.*)$ /new-path/$<span class="token number">1</span>;
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>防盗链<pre class="line-numbers language-json" data-language="json"><code class="language-json">server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location ~* \.(gif|jpg|png)$ <span class="token punctuation">&#123;</span>  
+	       valid_referers none blocked *.something.com;
+	       if($invalid_referer) <span class="token punctuation">&#123;</span>
+		       return <span class="token number">403</span>;
+	       <span class="token punctuation">&#125;</span>
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>简易文件服务器<pre class="line-numbers language-json" data-language="json"><code class="language-json">server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       # 完整路径 /home/cartman/Downloads/test
+       location /test <span class="token punctuation">&#123;</span>  
+	       root /home/cartman/Downloads;  
+	       # 显示目录;    
+		   autoindex on;  
+		   # 显示文件大小; 关闭计算文件确切大小（单位bytes），只显示大概大小（单位kb、mb、gb)    
+		   autoindex_exact_size off;    
+		   # 显示文件时间    
+		   autoindex_localtime on;
+		   # 避免中文乱码;    
+		   charset utf<span class="token number">-8</span>;
+       <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<li>基于不同请求路径转发不同服务<pre class="line-numbers language-json" data-language="json"><code class="language-json">server <span class="token punctuation">&#123;</span>  
+       listen       <span class="token number">80</span>;  # 监听端口
+       server_name  localhost; # 绑定域名
+       location /path1/ <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//ip1:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       location /path2/ <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//ip2:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       location /path3/ <span class="token punctuation">&#123;</span>  
+	       proxy_pass http<span class="token operator">:</span><span class="token comment">//ip3:8080; # 后端服务器与端口</span>
+	       proxy_set_header Host $host; # 保留原始Host头
+	       proxy_set_header X-Real-IP $remote_addr; # 传递真实客户IP
+       <span class="token punctuation">&#125;</span>
+       
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 
       

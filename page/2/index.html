@@ -196,7 +196,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-01-21 11:22:20" itemprop="dateModified" datetime="2024-01-21T11:22:20+08:00">2024-01-21</time>
+      <time title="修改时间：2024-07-20 01:13:31" itemprop="dateModified" datetime="2024-07-20T01:13:31+08:00">2024-07-20</time>
     </span>
 
   
@@ -241,48 +241,48 @@
 <p>String为什么被设计成不可变类型</p>
 <p>1.无法被继承 私有方法不能被重写（为了语义统一）<br>2.每次操作生成新对象<br>3.线程安全</p>
 <p>使用HashMap HashSet 等结构时，一定要注意使用不可变类型作为key<br>假如要使用可变类型作为key，要重写hashCode方法和equals方法</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
-    Set&lt;StringBuilder&gt; set &#x3D; new HashSet&lt;StringBuilder&gt;();  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token class-name">Set</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">StringBuilder</span><span class="token punctuation">></span></span> set <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">StringBuilder</span><span class="token punctuation">></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    StringBuilder stringBuilder1 &#x3D; new StringBuilder(&quot;a&quot;);  
+    <span class="token class-name">StringBuilder</span> stringBuilder1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    StringBuilder stringBuilder2 &#x3D; new StringBuilder(&quot;ab&quot;);  
+    <span class="token class-name">StringBuilder</span> stringBuilder2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token string">"ab"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    set.add(stringBuilder1);  
+    set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>stringBuilder1<span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    set.add(stringBuilder2);  
+    set<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>stringBuilder2<span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    stringBuilder1.append(&quot;b&quot;);  
+    stringBuilder1<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    System.out.println(set);  
-    &#x2F;&#x2F; 打印结果： [ab, ab] 
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>set<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token comment">// 打印结果： [ab, ab] </span>
 
-&#125;
+<span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="String常量池"><a href="#String常量池" class="headerlink" title="String常量池"></a>String常量池</h4><p>String常量池位于方法区，一部分是编译期，一部分是运行时。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
-    String test&#x3D;&quot;123&quot;;  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token class-name">String</span> test<span class="token operator">=</span><span class="token string">"123"</span><span class="token punctuation">;</span>  
   
-    String str &#x3D; &quot;1&quot;;  
+    <span class="token class-name">String</span> str <span class="token operator">=</span> <span class="token string">"1"</span><span class="token punctuation">;</span>  
   
-    String str1 &#x3D; &quot;2&quot;;  
+    <span class="token class-name">String</span> str1 <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>  
   
-    String str2 &#x3D; &quot;3&quot;;  
+    <span class="token class-name">String</span> str2 <span class="token operator">=</span> <span class="token string">"3"</span><span class="token punctuation">;</span>  
   
-    System.out.println(test&#x3D;&#x3D;&quot;1&quot;+&quot;2&quot;+&quot;3&quot;);&#x2F;&#x2F;true  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>test<span class="token operator">==</span><span class="token string">"1"</span><span class="token operator">+</span><span class="token string">"2"</span><span class="token operator">+</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true  </span>
   
-    System.out.println(test&#x3D;&#x3D;str+str1+str2);&#x2F;&#x2F;false  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>test<span class="token operator">==</span>str<span class="token operator">+</span>str1<span class="token operator">+</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false  </span>
   
-    String s0 &#x3D; &quot;12&quot;;  
+    <span class="token class-name">String</span> s0 <span class="token operator">=</span> <span class="token string">"12"</span><span class="token punctuation">;</span>  
   
-    final String s1 &#x3D; &quot;2&quot;;  
+    <span class="token keyword">final</span> <span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"2"</span><span class="token punctuation">;</span>  
   
-    String s2 &#x3D; &quot;1&quot;+s1;  
+    <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"1"</span><span class="token operator">+</span>s1<span class="token punctuation">;</span>  
   
-    System.out.println(s0&#x3D;&#x3D;s2); &#x2F;&#x2F;true  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s0<span class="token operator">==</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//true  </span>
   
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h4 id="String中的intern方法"><a href="#String中的intern方法" class="headerlink" title="String中的intern方法"></a>String中的intern方法</h4><p>public native String intern();</p>
 <blockquote>
@@ -290,16 +290,16 @@
 </blockquote>
 <p>首先检查常量池中是否有“abc”，如果存在直接返回实例引用</p>
 <p>如果不存在，会在常量池中新增“abc”，然后返回实例引用</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void main(String[] args) &#123;  
-    String s1&#x3D;&quot;abc&quot;;  
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
+    <span class="token class-name">String</span> s1<span class="token operator">=</span><span class="token string">"abc"</span><span class="token punctuation">;</span>  
   
-    String s2 &#x3D; new String(&quot;abc&quot;);  
+    <span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
-    System.out.println(s1&#x3D;&#x3D;s2);&#x2F;&#x2F;false  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token operator">==</span>s2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false  </span>
   
-    System.out.println(s1&#x3D;&#x3D;s2.intern());&#x2F;&#x2F;true  
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1<span class="token operator">==</span>s2<span class="token punctuation">.</span><span class="token function">intern</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true  </span>
   
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
