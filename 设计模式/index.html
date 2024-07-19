@@ -28,7 +28,7 @@
 <meta property="og:description" content="软件开发的一个不变真理:CHANGE  设计原则1： 找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混合在一起  设计原则2： 针对接口编程而不是针对实现编程  设计原则3： 多用组合，少用继承  设计原则4： 为交互对象间的松耦合设计而努力（对象之间的交互尽量设计成松耦合）  设计原则5： 开放-关闭原则。类应该对扩展开放，对修改关闭。  设计原则6： 依赖倒置原则。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-15T04:37:53.863Z">
-<meta property="article:modified_time" content="2024-07-19T19:42:50.115Z">
+<meta property="article:modified_time" content="2024-07-19T19:53:50.821Z">
 <meta property="article:author" content="cartman">
 <meta name="twitter:card" content="summary">
 
@@ -202,7 +202,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-20 03:42:50" itemprop="dateModified" datetime="2024-07-20T03:42:50+08:00">2024-07-20</time>
+      <time title="修改时间：2024-07-20 03:53:50" itemprop="dateModified" datetime="2024-07-20T03:53:50+08:00">2024-07-20</time>
     </span>
 
   
@@ -280,7 +280,7 @@
     <span class="token punctuation">&#125;</span>  
   
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setStrategy</span><span class="token punctuation">(</span><span class="token class-name">CalculatorStrategy</span> strategy<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
-        thi<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span>s<span class="token punctuation">.</span>strategy <span class="token operator">=</span> strategy<span class="token punctuation">;</span>  
+        <span class="token keyword">this</span><span class="token punctuation">.</span>strategy <span class="token operator">=</span> strategy<span class="token punctuation">;</span>  
     <span class="token punctuation">&#125;</span>  
   
     <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">executeStrategy</span><span class="token punctuation">(</span><span class="token class-name">String</span> num1<span class="token punctuation">,</span> <span class="token class-name">String</span> num2<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
@@ -453,7 +453,7 @@
             <span class="token class-name">Product</span> b <span class="token operator">=</span> factory<span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">"B"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
             b<span class="token punctuation">.</span><span class="token function">operation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
         <span class="token punctuation">&#125;</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">RuntimeException</span> runtimeException<span class="token punctuation">)</span><span class="token punctuation">&#123;</span>  
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span>pri<span class="token operator">*</span><span class="token operator">*</span><span class="token operator">*</span><span class="token function">ntln</span><span class="token punctuation">(</span>runtimeException<span class="token punctuation">.</span><span class="token function">getLocalizedMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>runtimeException<span class="token punctuation">.</span><span class="token function">getLocalizedMessage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
         <span class="token punctuation">&#125;</span>  
         <span class="token keyword">try</span> <span class="token punctuation">&#123;</span>  
             <span class="token class-name">Product</span> c <span class="token operator">=</span> factory<span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
