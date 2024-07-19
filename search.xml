@@ -696,4 +696,18 @@ public class Singleton &#123;
 </ol>
 ]]></content>
   </entry>
+  <entry>
+    <title>Nginx</title>
+    <url>/Nginx/</url>
+    <content><![CDATA[<h4 id="常见用途"><a href="#常见用途" class="headerlink" title="常见用途"></a>常见用途</h4><ol>
+<li>web服务器</li>
+<li>反向代理</li>
+<li>负载均衡</li>
+<li>URL重定向</li>
+<li>防盗链</li>
+<li>简易文件服务器</li>
+<li></li>
+</ol>
+]]></content>
+  </entry>
 </search>
