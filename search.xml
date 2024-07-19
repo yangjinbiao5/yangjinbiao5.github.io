@@ -561,7 +561,8 @@ server <span class="token punctuation">&#123;</span>
   <entry>
     <title>设计模式</title>
     <url>/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="软件开发的一个不变真理-CHANGE"><a href="#软件开发的一个不变真理-CHANGE" class="headerlink" title="软件开发的一个不变真理:CHANGE"></a>软件开发的一个不变真理:CHANGE</h3><hr>
+    <content><![CDATA[<p> 软件开发的一个不变真理:CHANGE</p>
+<hr>
 <h4 id="设计原则1："><a href="#设计原则1：" class="headerlink" title="设计原则1："></a>设计原则1：</h4><ul>
 <li>找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混合在一起</li>
 </ul>
@@ -580,7 +581,7 @@ server <span class="token punctuation">&#123;</span>
 <h4 id="设计原则6："><a href="#设计原则6：" class="headerlink" title="设计原则6："></a>设计原则6：</h4><ul>
 <li>依赖倒置原则。 要依赖抽象，不要依赖具体类。</li>
 </ul>
-<h5 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h5><ul>
+<h4 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h4><ul>
 <li>定义算法族，分别封装起来，让它们可以互相替换。此模式让算法的变化独立于使用算法的客户。<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">CalculatorStrategy</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">double</span> <span class="token function">calculate</span><span class="token punctuation">(</span><span class="token class-name">BigDecimal</span> num1<span class="token punctuation">,</span> <span class="token class-name">BigDecimal</span> num2<span class="token punctuation">)</span><span class="token punctuation">;</span>  
   
@@ -665,7 +666,7 @@ server <span class="token punctuation">&#123;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h5 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h5><ul>
+<h4 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h4><ul>
 <li>定义了对象之间一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖者都会收到通知并自动更新。<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 观察者接口  </span>
 <span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Observer</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
@@ -683,7 +684,7 @@ server <span class="token punctuation">&#123;</span>
   
     <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
         <span class="token keyword">return</span> state<span class="token punctuation">;</span>  
-    <span class="token punctuation">&#125;</span>  
+    <span class="token punctuation">&#125;</span>  #####
   
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setState</span><span class="token punctuation">(</span><span class="token keyword">int</span> state<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>  
         <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> state<span class="token punctuation">;</span>  
@@ -751,10 +752,10 @@ server <span class="token punctuation">&#123;</span>
     <span class="token punctuation">&#125;</span>  
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h5 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h5><ul>
+<h4 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h4><ul>
 <li>动态地将责任附加到对象上，若要扩展功能，装饰者提供了比继承更有弹性的替代方案。</li>
 </ul>
-<h5 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h5><ul>
+<h4 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h4><ul>
 <li>定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法让类把实例化推迟到子类。<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">Product</span> <span class="token punctuation">&#123;</span>  
     <span class="token keyword">void</span> <span class="token function">operation</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
 <span class="token punctuation">&#125;</span>
@@ -813,7 +814,7 @@ server <span class="token punctuation">&#123;</span>
 <span class="token punctuation">&#125;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
-<h5 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h5><ul>
+<h4 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h4><ul>
 <li>提供了一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类。</li>
 </ul>
 <h4 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h4><ul>
