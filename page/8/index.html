@@ -22,28 +22,23 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yangjinbiao5.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"red","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":false,"nav":null,"activeClass":"gitalk"},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="运行时数据区域 程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有 OOM 的区域。 虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有 StackOverflowError 和 OOM.  本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。 java 堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过 - xmx 和 -">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JVM">
-<meta property="og:url" content="https://yangjinbiao5.github.io/JVM/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="盡人事 聽天命">
+<meta property="og:url" content="https://yangjinbiao5.github.io/page/8/index.html">
 <meta property="og:site_name" content="盡人事 聽天命">
-<meta property="og:description" content="运行时数据区域 程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有 OOM 的区域。 虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有 StackOverflowError 和 OOM.  本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。 java 堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过 - xmx 和 -">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-09T17:00:11.646Z">
-<meta property="article:modified_time" content="2024-07-29T19:15:38.754Z">
 <meta property="article:author" content="cartman">
-<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://yangjinbiao5.github.io/JVM/">
+<link rel="canonical" href="https://yangjinbiao5.github.io/page/8/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yangjinbiao5.github.io/JVM/","path":"JVM/","title":"JVM"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"page/8/index.html","title":""}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>JVM | 盡人事 聽天命</title>
+<title>盡人事 聽天命 - 庐山烟雨浙江潮，未至千般恨不消</title>
   
 
 
@@ -76,7 +71,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <p class="site-title">盡人事 聽天命</p>
+      <h1 class="site-title">盡人事 聽天命</h1>
       <i class="logo-line"></i>
     </a>
       <p class="site-subtitle" itemprop="description">庐山烟雨浙江潮，未至千般恨不消</p>
@@ -131,7 +126,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+    <div class="sidebar-inner sidebar-overview-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -144,7 +139,6 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F"><span class="nav-number">1.</span> <span class="nav-text">运行时数据区域</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -190,18 +184,17 @@
 
     </div>
 
-    <div class="main-inner post posts-expand">
+    <div class="main-inner index posts-expand">
 
-
-  
+    
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yangjinbiao5.github.io/JVM/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://yangjinbiao5.github.io/%E5%A4%87%E5%BF%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/img.jpg">
@@ -214,13 +207,13 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="JVM | 盡人事 聽天命">
+      <meta itemprop="name" content="undefined | 盡人事 聽天命">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          JVM
-        </h1>
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/%E5%A4%87%E5%BF%98/" class="post-title-link" itemprop="url">备忘</a>
+        </h2>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -229,15 +222,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-12-10 01:00:11" itemprop="dateCreated datePublished" datetime="2023-12-10T01:00:11+08:00">2023-12-10</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-07-30 03:15:38" itemprop="dateModified" datetime="2024-07-30T03:15:38+08:00">2024-07-30</time>
+      <time title="创建时间：2024-07-31 02:10:00 / 修改时间：02:54:34" itemprop="dateCreated datePublished" datetime="2024-07-31T02:10:00+08:00">2024-07-31</time>
     </span>
 
   
@@ -247,7 +234,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>285</span>
+      <span>348</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -264,16 +251,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><ol>
-<li>程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有 OOM 的区域。</li>
-<li>虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有 StackOverflowError 和 OOM.</li>
-<li> 本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。</li>
-<li>java 堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过 - xmx 和 - xms 控制堆的大小（一般设置成一样，内存扩大或缩小导致应用停顿，降低延迟）</li>
-<li>方法区。用于存储类信息、常量、静态变量、即时编译器编译后的代码等数据。这个区域的内存回收目标主要是针对常量池的回收和对类型的卸载。有 OOM。</li>
-<li>运行时常量池。是方法区的一部分，用于存放编译期产生的各种字面量和符号引用。运行期间也可能有新的常量放入池中。</li>
-<li></li>
-</ol>
+    <div class="post-body" itemprop="articleBody">
+          <h5 id="双系统配置"><a href="#双系统配置" class="headerlink" title="双系统配置"></a>双系统配置</h5><ul>
+<li><p>在 /boot/grub/grub.cfg 文件中添加以下内容</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## BEGIN /etc/grub.d/30_os-prober ###</span></span></span><br><span class="line">menuentry 'WIN11' {</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;insmod chain &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;search --fs-uuid --no-floppy --set=root 1AC6-9E41 &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;chainloader (${root})/efi/Microsoft/Boot/bootmgfw.efi</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## END /etc/grub.d/30_os-prober ###</span></span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>其中 WIN11 为名称，可修改.root 1AC6-9E41, 1AC6-9E41 为 windows EFI 分区的 UUID</p>
+</li>
+<li><p>查看磁盘 UUID</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo blkid /dev/nvme1n1p1</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>修改磁盘挂载配置文件 </p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/fstabab</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<h5 id="配置SSH-KEY"><a href="#配置SSH-KEY" class="headerlink" title="配置SSH-KEY"></a>配置 SSH-KEY</h5><ul>
+<li>生成 SSH-KEY<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C '291857567@qq.com' -f /home/cartman/.ssh/github_id_rsa</span><br></pre></td></tr></tbody></table></figure></li>
+<li>在～/.ssh 目录下新建 config 文件添加如下内容：<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line"></span><br><span class="line">HostName github.com</span><br><span class="line"></span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"></span><br><span class="line">IdentityFile /home/cartman/.ssh/github_id_rsa</span><br><span class="line"></span><br><span class="line">Host gitee.com</span><br><span class="line"></span><br><span class="line">HostName gitee.com</span><br><span class="line"></span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"></span><br><span class="line">IdentityFile /home/cartman/.ssh/id_rsa</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+<li>在 github/gitee 管理页面添加 SSH-KEY</li>
+</ul>
+<h5 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h5><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">加密</span></span><br><span class="line">echo test | base64</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解密</span></span><br><span class="line">echo dGVzdAo= | base64 -d</span><br></pre></td></tr></tbody></table></figure>
 
+<h5 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h5><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># kafka启动</span><br><span class="line">./kafka-server-start.sh -daemon ../config/server.properties</span><br><span class="line"></span><br><span class="line"># 查看topics 列表</span><br><span class="line">./kafka-topics.sh --zookeeper localhost:3181 --list</span><br><span class="line"></span><br><span class="line">#创建topic</span><br><span class="line">./kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test</span><br><span class="line"></span><br><span class="line"># 查看某个topic详情</span><br><span class="line">./kafka-topics.sh --describe --topic test --bootstrap-server localhost:9092</span><br><span class="line"></span><br><span class="line"># 命令行发送消息 --broker-list 或者 --bootstrap-server 取决于版本</span><br><span class="line">./kafka-console-producer.sh --topic test --broker-list localhost:9092</span><br><span class="line"></span><br><span class="line"># 命令行查看接收消息</span><br><span class="line">./kafka-console-consumer.sh --topic test --from-beginning --bootstrap-server localhost:9092</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h5><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install -g wscat</span><br><span class="line">wscat --listen 9000</span><br><span class="line">wscat --connect ws://localhost:9000/echo</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="comment"># Archlinux/Manjaro使用笔记-报错：一个或多个 PGP 签名无法校验！的解决方法</span></span>&nbsp;</span><br><span class="line">gpg --recv-keys xxxxxx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解锁一个用户</span></span><br><span class="line">faillock --user cartman --reset</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="built_in">head</span>登录带密码的es</span></span><br><span class="line">http://localhost:9100/?auth_user=elastic&amp;auth_password=yangjinbiao5</span><br></pre></td></tr></tbody></table></figure>
+      
     </div>
 
     
@@ -281,50 +283,8 @@
     
 
     <footer class="post-footer">
-          <div class="reward-container">
-  <div>请我一杯咖啡吧！</div>
-  <button>
-    赞赏
-  </button>
-  <div class="post-reward">
-      <div>
-        <img src="/images/img.jpg" alt="cartman 微信">
-        <span>微信</span>
-      </div>
-      <div>
-        <img src="/images/img.jpg" alt="cartman 支付宝">
-        <span>支付宝</span>
-      </div>
-      <div>
-        <img src="/images/img.jpg" alt="cartman PayPal">
-        <span>PayPal</span>
-      </div>
-      <div>
-        <img src="/images/img.jpg" alt="cartman 比特币">
-        <span>比特币</span>
-      </div>
-
-  </div>
-</div>
-
-          <div class="post-tags">
-              <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
-          </div>
-
-        
-
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/Singleton/" rel="prev" title="单例模式">
-                  <i class="fa fa-angle-left"></i> 单例模式
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/Kotlin/" rel="next" title="关于 Kotlin">
-                  关于 Kotlin <i class="fa fa-angle-right"></i>
-                </a>
-            </div>
-          </div>
+        <div class="post-eof"></div>
+      
     </footer>
   </article>
 </div>
@@ -332,9 +292,10 @@
 
 
 
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span>
+  </nav>
 
-
-    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -406,11 +367,11 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://yangjinbiao5.github.io/JVM/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":3000,"priority":true,"url":"https://yangjinbiao5.github.io/page/8/"}</script>
   <script src="/js/third-party/quicklink.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"yangjinbiao5","repo":"yangjinbiao5.github.io","client_id":"Ov23lii2CWVkGuUiEy6C","client_secret":"168d48842a3106862fb29553071e7d463a72de12","admin_user":"yangjinbiao5","distraction_free_mode":true,"lables":"gitalk","proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"6945b67149b855f1775d4fe21b80f64a"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"yangjinbiao5","repo":"yangjinbiao5.github.io","client_id":"Ov23lii2CWVkGuUiEy6C","client_secret":"168d48842a3106862fb29553071e7d463a72de12","admin_user":"yangjinbiao5","distraction_free_mode":true,"lables":"gitalk","proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"ef27d280b3878b0e79f751328d11303e"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
