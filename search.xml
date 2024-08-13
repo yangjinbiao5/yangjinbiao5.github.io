@@ -14,23 +14,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JVM</title>
-    <url>/JVM/</url>
-    <content><![CDATA[<h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><ol>
-<li>程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有 OOM 的区域。</li>
-<li>虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有 StackOverflowError 和 OOM.</li>
-<li> 本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。</li>
-<li>java 堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过 - xmx 和 - xms 控制堆的大小（一般设置成一样，内存扩大或缩小导致应用停顿，降低延迟）</li>
-<li>方法区。用于存储类信息、常量、静态变量、即时编译器编译后的代码等数据。这个区域的内存回收目标主要是针对常量池的回收和对类型的卸载。有 OOM。</li>
-<li>运行时常量池。是方法区的一部分，用于存放编译期产生的各种字面量和符号引用。运行期间也可能有新的常量放入池中。</li>
-<li></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Kotlin</title>
     <url>/Kotlin/</url>
     <content><![CDATA[<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
@@ -62,6 +45,23 @@
         <tag>java</tag>
         <tag>soft</tag>
         <tag>language</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JVM</title>
+    <url>/JVM/</url>
+    <content><![CDATA[<h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><ol>
+<li>程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有 OOM 的区域。</li>
+<li>虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有 StackOverflowError 和 OOM.</li>
+<li> 本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。</li>
+<li>java 堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过 - xmx 和 - xms 控制堆的大小（一般设置成一样，内存扩大或缩小导致应用停顿，降低延迟）</li>
+<li>方法区。用于存储类信息、常量、静态变量、即时编译器编译后的代码等数据。这个区域的内存回收目标主要是针对常量池的回收和对类型的卸载。有 OOM。</li>
+<li>运行时常量池。是方法区的一部分，用于存放编译期产生的各种字面量和符号引用。运行期间也可能有新的常量放入池中。</li>
+<li></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
