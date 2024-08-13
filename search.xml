@@ -6,31 +6,6 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>JUC</title>
-    <url>/JUC/</url>
-    <content><![CDATA[]]></content>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JVM</title>
-    <url>/JVM/</url>
-    <content><![CDATA[<h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><ol>
-<li>程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有 OOM 的区域。</li>
-<li>虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有 StackOverflowError 和 OOM.</li>
-<li> 本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。</li>
-<li>java 堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过 - xmx 和 - xms 控制堆的大小（一般设置成一样，内存扩大或缩小导致应用停顿，降低延迟）</li>
-<li>方法区。用于存储类信息、常量、静态变量、即时编译器编译后的代码等数据。这个区域的内存回收目标主要是针对常量池的回收和对类型的卸载。有 OOM。</li>
-<li>运行时常量池。是方法区的一部分，用于存放编译期产生的各种字面量和符号引用。运行期间也可能有新的常量放入池中。</li>
-<li></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Kotlin</title>
     <url>/Kotlin/</url>
     <content><![CDATA[<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
@@ -59,15 +34,40 @@
 </ol>
 ]]></content>
       <tags>
-        <tag>java</tag>
         <tag>soft</tag>
+        <tag>java</tag>
         <tag>language</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JUC</title>
+    <url>/JUC/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>
     <title>Mybatis</title>
     <url>/Mybatis/</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>JVM</title>
+    <url>/JVM/</url>
+    <content><![CDATA[<h3 id="运行时数据区域"><a href="#运行时数据区域" class="headerlink" title="运行时数据区域"></a>运行时数据区域</h3><ol>
+<li>程序计数器 。当前线程所执行字节码的行号指示器。线程私有，唯一没有 OOM 的区域。</li>
+<li>虚拟机栈。 线程私有。执行方法会创建栈帧，用于存储局部变量表、操作数栈、动态链接、方法出入口等信息。有 StackOverflowError 和 OOM.</li>
+<li> 本地方法栈。与虚拟机栈类似。只不过是为本地方法服务。</li>
+<li>java 堆。用于存放对象实例。是垃圾收集器管理的主要区域。通过 - xmx 和 - xms 控制堆的大小（一般设置成一样，内存扩大或缩小导致应用停顿，降低延迟）</li>
+<li>方法区。用于存储类信息、常量、静态变量、即时编译器编译后的代码等数据。这个区域的内存回收目标主要是针对常量池的回收和对类型的卸载。有 OOM。</li>
+<li>运行时常量池。是方法区的一部分，用于存放编译期产生的各种字面量和符号引用。运行期间也可能有新的常量放入池中。</li>
+<li></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>java</tag>
+      </tags>
   </entry>
   <entry>
     <title>Mysql</title>
@@ -98,11 +98,6 @@
   <entry>
     <title>Python</title>
     <url>/Python/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Redis</title>
-    <url>/Redis/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -141,6 +136,11 @@
       <tags>
         <tag>java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Redis</title>
+    <url>/Redis/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Spring</title>
@@ -209,49 +209,6 @@
       </tags>
   </entry>
   <entry>
-    <title>其他</title>
-    <url>/%E5%85%B6%E4%BB%96/</url>
-    <content><![CDATA[<h5 id="vps搭服务器"><a href="#vps搭服务器" class="headerlink" title="vps搭服务器"></a>vps 搭服务器</h5><ul>
-<li><a href="https://github.com/Alvin9999/new-pac">教程</a></li>
-<li><a href="https://www.vultr.com/">服务器</a></li>
-<li>账号：<a href="mailto:cartman9527@163.com">cartman9527@163.com</a></li>
-<li> 安装：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">系统:centos</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装wget</span></span><br><span class="line">yum -y install wget</span><br><span class="line">adwb</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载脚本 ，赋权，运行</span></span><br><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.shrtty</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 grub</span></span><br><span class="line">yum install grub2</span><br><span class="line">grub2-mkconfig -o /boot/grub2/grub.cfg</span><br><span class="line">adwb</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看防火墙状态命令：</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止firewall命令：</span></span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">禁止firewall开机启动命令：</span></span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">**下载一键加速VPS服务器 脚本  赋权 运行**</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可不执行</span></span><br><span class="line">wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linuxrtty-NetSpeed/master/tcp.sh" &amp;&amp; chmod +x tcp.sh &amp;&amp; bash tcp.sh</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-rtty</li>
-</ul>
-<h5 id="双系统配置"><a href="#双系统配置" class="headerlink" title="双系统配置"></a>双系统配置</h5><ul>
-<li><p>在 /boot/grub/grub.cfg 文件中添加以下内容</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## BEGIN /etc/grub.d/30_os-prober ###</span></span></span><br><span class="line">menuentry 'WIN11' {</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;insmod chain &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;search --fs-uuid --no-floppy --set=root 1AC6-9E41 &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;chainloader (${root})/efi/Microsoft/Boot/bootmgfw.efi</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## END /etc/grub.d/30_os-prober ###</span></span></span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>其中 WIN11 为名称，可修改.root 1AC6-9E41, 1AC6-9E41 为 windows EFI 分区的 UUID</p>
-</li>
-<li><p>查看磁盘分区情况</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line"># list block devices</span><br><span class="line">lsblk</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>查看磁盘 UUID</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo blkid /dev/nvme1n1p1</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>修改磁盘挂载配置文件 </p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo vim /etc/fstabab</span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-<h5 id="配置SSH-KEY"><a href="#配置SSH-KEY" class="headerlink" title="配置SSH-KEY"></a>配置 SSH-KEY</h5><ul>
-<li>生成 SSH-KEY<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C '291857567@qq.com' -f /home/cartman/.ssh/github_id_rsa</span><br></pre></td></tr></tbody></table></figure></li>
-<li>在～/.ssh 目录下新建 config 文件添加如下内容：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line"></span><br><span class="line">HostName github.com</span><br><span class="line"></span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"></span><br><span class="line">IdentityFile /home/cartman/.ssh/github_id_rsa</span><br><span class="line"></span><br><span class="line">Host gitee.com</span><br><span class="line"></span><br><span class="line">HostName gitee.com</span><br><span class="line"></span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"></span><br><span class="line">IdentityFile /home/cartman/.ssh/id_rsa</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
-<li>在 github/gitee 管理页面添加 SSH-KEY</li>
-</ul>
-<h5 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">加密</span></span><br><span class="line">echo test | base64</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解密</span></span><br><span class="line">echo dGVzdAo= | base64 -d</span><br></pre></td></tr></tbody></table></figure>
-
-<h5 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">kafka启动</span></span><br><span class="line">./kafka-server-start.sh -daemon ../config/server.properties</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看topics 列表</span></span><br><span class="line">./kafka-topics.sh --zookeeper localhost:3181 --list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建topic</span></span><br><span class="line">./kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看某个topic详情</span></span><br><span class="line">./kafka-topics.sh --describe --topic test --bootstrap-server localhost:9092</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">命令行发送消息 --broker-list 或者 --bootstrap-server 取决于版本</span></span><br><span class="line">./kafka-console-producer.sh --topic test --broker-list localhost:9092</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">命令行查看接收消息</span></span><br><span class="line">./kafka-console-consumer.sh --topic test --from-beginning --bootstrap-server localhost:9092</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-
-<h5 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo npm install -g wscat</span><br><span class="line">wscat --listen 9000</span><br><span class="line">wscat --connect ws://localhost:9000/echo</span><br></pre></td></tr></tbody></table></figure>
-
-<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Archlinux/Manjaro使用笔记-报错：一个或多个 PGP 签名无法校验！的解决方法</span>&nbsp;</span><br><span class="line">gpg --recv-keys xxxxxx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解锁一个用户</span></span><br><span class="line">faillock --user cartman --reset</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">head</span>登录带密码的es</span></span><br><span class="line">http://localhost:9100/?auth_user=elastic&amp;auth_password=yangjinbiao5</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git .gitignore不起作用时</span></span><br><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
-
-
-<h5 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h5><p><img src="/%E5%85%B6%E4%BB%96/2.png"><br><img src="/%E5%85%B6%E4%BB%96/1.png"></p>
-]]></content>
-      <tags>
-        <tag>other</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>设计模式</title>
     <url>/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
     <content><![CDATA[<p> 软件开发的一个不变真理：CHANGE</p>
@@ -295,6 +252,49 @@ rtty</li>
 ]]></content>
       <tags>
         <tag>soft</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>其他</title>
+    <url>/%E5%85%B6%E4%BB%96/</url>
+    <content><![CDATA[<h5 id="vps搭服务器"><a href="#vps搭服务器" class="headerlink" title="vps搭服务器"></a>vps 搭服务器</h5><ul>
+<li><a href="https://github.com/Alvin9999/new-pac">教程</a></li>
+<li><a href="https://www.vultr.com/">服务器</a></li>
+<li>账号：<a href="mailto:cartman9527@163.com">cartman9527@163.com</a></li>
+<li> 安装：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">系统:centos</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装wget</span></span><br><span class="line">yum -y install wget</span><br><span class="line">adwb</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载脚本 ，赋权，运行</span></span><br><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.shrtty</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 grub</span></span><br><span class="line">yum install grub2</span><br><span class="line">grub2-mkconfig -o /boot/grub2/grub.cfg</span><br><span class="line">adwb</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看防火墙状态命令：</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止firewall命令：</span></span><br><span class="line">systemctl stop firewalld.service</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">禁止firewall开机启动命令：</span></span><br><span class="line">systemctl disable firewalld.service</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">**下载一键加速VPS服务器 脚本  赋权 运行**</span> </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">可不执行</span></span><br><span class="line">wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linuxrtty-NetSpeed/master/tcp.sh" &amp;&amp; chmod +x tcp.sh &amp;&amp; bash tcp.sh</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+rtty</li>
+</ul>
+<h5 id="双系统配置"><a href="#双系统配置" class="headerlink" title="双系统配置"></a>双系统配置</h5><ul>
+<li><p>在 /boot/grub/grub.cfg 文件中添加以下内容</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## BEGIN /etc/grub.d/30_os-prober ###</span></span></span><br><span class="line">menuentry 'WIN11' {</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;insmod chain &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;search --fs-uuid --no-floppy --set=root 1AC6-9E41 &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;chainloader (${root})/efi/Microsoft/Boot/bootmgfw.efi</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## END /etc/grub.d/30_os-prober ###</span></span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>其中 WIN11 为名称，可修改.root 1AC6-9E41, 1AC6-9E41 为 windows EFI 分区的 UUID</p>
+</li>
+<li><p>查看磁盘分区情况</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line"># list block devices</span><br><span class="line">lsblk</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>查看磁盘 UUID</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo blkid /dev/nvme1n1p1</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>修改磁盘挂载配置文件 </p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo vim /etc/fstabab</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+<h5 id="配置SSH-KEY"><a href="#配置SSH-KEY" class="headerlink" title="配置SSH-KEY"></a>配置 SSH-KEY</h5><ul>
+<li>生成 SSH-KEY<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C '291857567@qq.com' -f /home/cartman/.ssh/github_id_rsa</span><br></pre></td></tr></tbody></table></figure></li>
+<li>在～/.ssh 目录下新建 config 文件添加如下内容：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"></span><br><span class="line">Host github.com</span><br><span class="line"></span><br><span class="line">HostName github.com</span><br><span class="line"></span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"></span><br><span class="line">IdentityFile /home/cartman/.ssh/github_id_rsa</span><br><span class="line"></span><br><span class="line">Host gitee.com</span><br><span class="line"></span><br><span class="line">HostName gitee.com</span><br><span class="line"></span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line"></span><br><span class="line">IdentityFile /home/cartman/.ssh/id_rsa</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+<li>在 github/gitee 管理页面添加 SSH-KEY</li>
+</ul>
+<h5 id="base64"><a href="#base64" class="headerlink" title="base64"></a>base64</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">加密</span></span><br><span class="line">echo test | base64</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解密</span></span><br><span class="line">echo dGVzdAo= | base64 -d</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="kafka"><a href="#kafka" class="headerlink" title="kafka"></a>kafka</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">kafka启动</span></span><br><span class="line">./kafka-server-start.sh -daemon ../config/server.properties</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看topics 列表</span></span><br><span class="line">./kafka-topics.sh --zookeeper localhost:3181 --list</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建topic</span></span><br><span class="line">./kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看某个topic详情</span></span><br><span class="line">./kafka-topics.sh --describe --topic test --bootstrap-server localhost:9092</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">命令行发送消息 --broker-list 或者 --bootstrap-server 取决于版本</span></span><br><span class="line">./kafka-console-producer.sh --topic test --broker-list localhost:9092</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">命令行查看接收消息</span></span><br><span class="line">./kafka-console-consumer.sh --topic test --from-beginning --bootstrap-server localhost:9092</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo npm install -g wscat</span><br><span class="line">wscat --listen 9000</span><br><span class="line">wscat --connect ws://localhost:9000/echo</span><br></pre></td></tr></tbody></table></figure>
+
+<h5 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h5><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Archlinux/Manjaro使用笔记-报错：一个或多个 PGP 签名无法校验！的解决方法</span>&nbsp;</span><br><span class="line">gpg --recv-keys xxxxxx</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">解锁一个用户</span></span><br><span class="line">faillock --user cartman --reset</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">head</span>登录带密码的es</span></span><br><span class="line">http://localhost:9100/?auth_user=elastic&amp;auth_password=yangjinbiao5</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">git .gitignore不起作用时</span></span><br><span class="line">git rm -r --cached .</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h5 id="插入图片"><a href="#插入图片" class="headerlink" title="插入图片"></a>插入图片</h5><p><img src="/%E5%85%B6%E4%BB%96/2.png"><br><img src="/%E5%85%B6%E4%BB%96/1.png"></p>
+]]></content>
+      <tags>
+        <tag>other</tag>
       </tags>
   </entry>
 </search>
