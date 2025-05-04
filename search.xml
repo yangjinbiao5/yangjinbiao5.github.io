@@ -1,17 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Docker</title>
+    <url>/Docker/</url>
+    <content><![CDATA[<h2 id="Docker的应用场景"><a href="#Docker的应用场景" class="headerlink" title="Docker的应用场景"></a>Docker 的应用场景</h2><ul>
+<li><p>Web 应用的自动化打包和发布。</p>
+</li>
+<li><p>自动化测试和持续集成、发布。</p>
+</li>
+<li><p>在服务型环境中部署和调整数据库或其他的后台应用。</p>
+</li>
+<li><p>从头编译或者扩展现有的 OpenShift 或 Cloud Foundry 平台来搭建自己的 PaaS 环境。</p>
+</li>
+</ul>
+<h2 id="Docker-的优点"><a href="#Docker-的优点" class="headerlink" title="Docker 的优点"></a>Docker 的优点</h2><h3 id="1、快速，一致地交付您的应用程序"><a href="#1、快速，一致地交付您的应用程序" class="headerlink" title="1、快速，一致地交付您的应用程序"></a>1、快速，一致地交付您的应用程序</h3><h3 id="2、响应式部署和扩展"><a href="#2、响应式部署和扩展" class="headerlink" title="2、响应式部署和扩展"></a>2、响应式部署和扩展</h3><h3 id="3、在同一硬件上运行更多工作负载"><a href="#3、在同一硬件上运行更多工作负载" class="headerlink" title="3、在同一硬件上运行更多工作负载"></a>3、在同一硬件上运行更多工作负载</h3><h6 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h6><ul>
+<li>docker run<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">运行容器</span></span><br><span class="line">docker run -d -p 1521:1521 --name oracle11g registry.cn-hangzhou.aliyuncs.com/helowin/oracle_11g</span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker ps<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">列出正在运行的容器。</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker exec<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在容器中执行命令。</span></span><br><span class="line">docker exec -it container_name /bin/bash</span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker network<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建一个自定义网络并将容器连接到该网络</span></span><br><span class="line">docker network create my_network</span><br><span class="line">docker run -d --network my_network ubuntu</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker logs<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">docker logs [ID或者名字] 可以查看容器内部的标准输出</span></span><br><span class="line">docker logs -f bf08b7f2cd89</span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker volume<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">**功能**：</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">允许容器间共享数据。</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">保证数据持久化，独立于容器的生命周期。</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">创建并挂载卷：</span></span><br><span class="line">docker volume create my_volume</span><br><span class="line">docker run -d -v my_volume:/data ubuntu</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker export<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">导出容器</span></span><br><span class="line"> docker export 1e560fca3906 &gt; ubuntu.tar</span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker import <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">导入容器快照</span></span><br><span class="line"> cat docker/ubuntu.tar | docker import - test/ubuntu:v1 </span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker rm<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">移除容器 -f 强制</span></span><br><span class="line">docker rm  -f container_name</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker rmi<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除一个或多个镜像</span></span><br><span class="line">docker rmi -i my-image</span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker-compose<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Docker Compose 是一个用于定义和运行多容器 Docker 应用的工具。通过 Compose，用户可以使用一个&nbsp;`docker-compose.yml`&nbsp;配置文件定义多个容器（服务），并可以通过一个命令启动这些容器。Docker Compose 主要用于开发、测试和部署多容器的应用。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">**功能**：</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">定义和运行多个容器组成的应用。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">通过 YAML 文件来配置应用的服务、网络和卷等。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建一个简单的&nbsp;`docker-compose.yml`&nbsp;文件来配置一个包含 Web 服务和数据库服务的应用：</span></span><br><span class="line"></span><br><span class="line">version: "1.0"</span><br><span class="line">services:</span><br><span class="line">  web:</span><br><span class="line">    build: .</span><br><span class="line">    ports:</span><br><span class="line">      - "8080:80"</span><br><span class="line">    depends_on:</span><br><span class="line">      - db</span><br><span class="line">      - redis</span><br><span class="line">  redis:</span><br><span class="line">    image: redis</span><br><span class="line">  db:</span><br><span class="line">    image: mysql</span><br><span class="line">    environment:</span><br><span class="line">	    MYSQL_ROOT_PASSWORD: example</span><br><span class="line">    </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">启动 Compose 定义的所有服务：</span></span><br><span class="line">docker-compose up</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">停止并删除由&nbsp;`docker-compose`&nbsp;启动的容器、网络等</span></span><br><span class="line">docker-compose down</span><br></pre></td></tr></tbody></table></figure></li>
+<li>docker build <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">Dockerfile 是一个用来构建镜像的文本文件，文本内容包含了一条条构建镜像所需的指令和说明。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">通过定义一系列命令和参数，Dockerfile 指导 Docker 构建一个自定义的镜像。</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">示例</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">syntax=docker/dockerfile:1</span></span><br><span class="line">FROM python:3.10-alpine</span><br><span class="line">WORKDIR /code</span><br><span class="line">ENV FLASK_APP=app.py</span><br><span class="line">ENV FLASK_RUN_HOST=0.0.0.0</span><br><span class="line">RUN apk add --no-cache gcc musl-dev linux-headers</span><br><span class="line">COPY requirements.txt requirements.txt</span><br><span class="line">RUN pip install -r requirements.txt</span><br><span class="line">EXPOSE 5000</span><br><span class="line">COPY . .</span><br><span class="line">CMD ["flask", "run", "--debug"]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">FROM 指定基础镜像，用于后续的指令构建</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">WORKDIR 设置后续指令的工作目录</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ENV 在容器内部设置环境变量</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">RUN 在构建过程中在镜像中执行命令</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">COPY 将文件或目录复制到镜像中</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">EXPOSE 声明容器运行时监听的特定网络端口</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">CMD 指定容器创建时的默认命令。（可以被覆盖）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ENTRYPOINT 设置容器创建时的主要命令。（不可被覆盖）类似于 CMD 指令，但其不会被 docker run 的命令行参数指定的指令所覆盖</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">ADD 将文件、目录或远程URL复制到镜像中</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">VOLUME 为容器创建挂载点或声明卷</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">docker build</span> </span><br><span class="line">docker build&nbsp;-t&nbsp;nginx:v3 .</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>JUC</title>
     <url>/JUC/</url>
     <content><![CDATA[]]></content>
       <tags>
         <tag>java</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Docker</title>
-    <url>/Docker/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>JVM</title>
@@ -96,13 +120,13 @@
       </tags>
   </entry>
   <entry>
-    <title>Redis</title>
-    <url>/Redis/</url>
+    <title>Python</title>
+    <url>/Python/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Python</title>
-    <url>/Python/</url>
+    <title>Redis</title>
+    <url>/Redis/</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
@@ -220,7 +244,7 @@
 <h5 id="双系统配置"><a href="#双系统配置" class="headerlink" title="双系统配置"></a>双系统配置</h5><ul>
 <li><p>在 /boot/grub/grub.cfg 文件中添加以下内容</p>
 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## BEGIN /etc/grub.d/30_os-prober ###</span></span></span><br><span class="line">menuentry 'WIN11' {</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;insmod chain &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;search --fs-uuid --no-floppy --set=root 1AC6-9E41 &nbsp;</span><br><span class="line"></span><br><span class="line">&nbsp;&nbsp;&nbsp;chainloader (${root})/efi/Microsoft/Boot/bootmgfw.efi</span><br><span class="line"></span><br><span class="line">}</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">## END /etc/grub.d/30_os-prober ###</span></span></span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>其中 WIN11 为名称，可修改.root 1AC6-9E41, 1AC6-9E41 为 windows EFI 分区的 UUID</p>
+<li><p>其中 WIN11 为名称，可修改. root 1AC6-9E41, 1AC6-9E41 为 windows EFI 分区的 UUID</p>
 </li>
 <li><p>查看磁盘分区情况</p>
 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line"># list block devices</span><br><span class="line">lsblk</span><br></pre></td></tr></tbody></table></figure></li>
